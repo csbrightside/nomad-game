@@ -12,8 +12,5 @@ module.exports = {
     'commit-msg': tasks([
       'commitlint -E HUSKY_GIT_PARAMS'
     ]),
-    'pre-push': tasks([
-      'branch-naming-check'
-    ]),
   }
 };
