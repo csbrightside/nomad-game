@@ -4,4 +4,23 @@
  * All functionality loaded here.
  *
  */
-window.console.log('Hello there');
+import Vue from './modules/vue.esm';
+
+// import Welcome from './components/welcome.vue';
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  /**
+   * Vue initialisation.
+   */
+  new Vue({
+    el: '#Nomad',
+    name: 'Nomad',
+    components: {
+      // Welcome,
+    },
+    data: {
+      test: true,
+    },
+  });
+});

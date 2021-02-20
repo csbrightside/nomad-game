@@ -1,2 +1,5 @@
-dist/
 /commitlint.config.js
+/dist/
+/rollup.config.js
+/sass.js
+/src/js/modules/

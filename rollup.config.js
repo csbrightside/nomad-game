@@ -2,7 +2,6 @@
 import { terser } from 'rollup-plugin-terser';
 import pkg from './package.json';
 
-
 // Configs
 var configs = {
 	name: 'BuildToolsCookbook',
@@ -15,7 +14,7 @@ var configs = {
 };
 
 // Banner
-var banner = `/*! ${configs.name ? configs.name : pkg.name} v${pkg.version} | (c) ${new Date().getFullYear()} ${pkg.author.name} | ${pkg.license} License | ${pkg.repository.url} */`;
+var banner = `/*! ${pkg.name} v${pkg.version} | (c) ${new Date().getFullYear()} ${pkg.author.name} | ${pkg.license} License | ${pkg.repository.url} */`;
 
 var createOutput = function (filename, minify) {
 	return configs.formats.map(function (format) {
@@ -25,7 +24,7 @@ var createOutput = function (filename, minify) {
 			banner: banner
 		};
 		if (format === 'iife') {
-			output.name = configs.name ? configs.name : pkg.name;
+			output.name = pkg.name;
 		}
 		if (minify) {
 			output.plugins = [terser()];
