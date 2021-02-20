@@ -1,2 +1,7 @@
-import './components/_matches.polyfill.js';
-import './components/some-code.js';
+/**
+ * Main JS entry point.
+ * ------------------------------------------------------------------------------
+ * All functionality loaded here.
+ *
+ */
+console.log('Hello there');

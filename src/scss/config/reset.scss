@@ -1,7 +1,9 @@
 /**
- * Main CSS entry point.
+ * Config: Reset
  * ------------------------------------------------------------------------------
- * All styles loaded here.
+ * Reset styles.
  *
  */
-@import 'config/reset';
+body {
+  font-family: sans-serif;
+}

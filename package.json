@@ -1,32 +1,32 @@
 {
-    "name": "build-tools-boilerplate",
-    "version": "2.0.0",
-    "description": "Simple recipes for building and compiling with the CLI.",
+    "name": "nomad-game",
+    "version": "0.0.1",
+    "description": "Simple text-based adventure game",
     "author": {
-        "name": "Your Name",
-        "url": "https://your-website.com"
+        "name": "Craig Baldwin",
+        "url": "https://craigbaldwin.com"
     },
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "http://github.com/cferdinandi/build-tools-boilerplate"
+        "url": "https://github.com/csbrightside/nomad-game"
     },
     "scripts": {
-        "clean": "recursive-delete 'dist'",
+        "clean": "recursive-delete \"dist\"",
         "js": "rollup --config",
         "css": "node sass.js",
         "svg": "svgo -f src/svg dist/svg --disable=removeViewBox,removeTitle",
         "img": "imagemin src/img/* --out-dir=dist/img --plugin=pngquant --plugin=mozjpeg --plugin=pngcrush --plugin=zopfli",
-        "copy": "recursive-copy 'src/copy' 'dist'",
+        "copy": "recursive-copy \"src/copy\" \"dist\"",
         "build-dirty": "npm-run-all -p js css svg img copy",
         "build": "npm-run-all -s clean build-dirty",
-        "watch-css": "chokidar './src/**/*.scss' -c 'npm run css'",
-        "watch-js": "chokidar './src/**/*.js' -c 'npm run js'",
-        "watch-svg": "chokidar './src/**/*.svg' -c 'npm run svg'",
-        "watch-img": "chokidar './src/img/**/*.*' -c 'npm run img'",
-        "watch-copy": "chokidar './src/copy/**/*.*' -c 'npm run copy'",
+        "watch-css": "chokidar \"./src/**/*.scss\" -c \"yarn css\"",
+        "watch-js": "chokidar \"./src/**/*.js\" -c \"yarn js\"",
+        "watch-svg": "chokidar \"./src/**/*.svg\" -c \"yarn svg\"",
+        "watch-img": "chokidar \"./src/img/**/*.*\" -c \"yarn img\"",
+        "watch-copy": "chokidar \"./src/copy/**/*.*\" -c \"yarn copy\"",
         "watch": "npm-run-all -p build watch-css watch-js watch-svg watch-img watch-copy",
-        "server-start": "browser-sync start --files 'dist' --server 'dist'",
+        "server-start": "browser-sync start --files \"dist\" --server \"dist\"",
         "server": "npm-run-all -p watch server-start"
     },
     "devDependencies": {

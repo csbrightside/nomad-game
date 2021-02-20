@@ -6,9 +6,9 @@ import pkg from './package.json';
 // Configs
 var configs = {
 	name: 'BuildToolsCookbook',
-	files: ['main.js', 'detects.js', 'another-file.js'],
-	formats: ['iife', 'es', 'amd', 'cjs'],
-	default: 'iife',
+	files: ['main.js'],
+	formats: ['es'],
+	default: 'es',
 	pathIn: 'src/js',
 	pathOut: 'dist/js',
 	minify: true
