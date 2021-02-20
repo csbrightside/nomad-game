@@ -1,47 +1,61 @@
 {
-    "name": "nomad-game",
-    "version": "0.0.1",
-    "description": "Simple text-based adventure game",
-    "author": {
-        "name": "Craig Baldwin",
-        "url": "https://craigbaldwin.com"
-    },
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/csbrightside/nomad-game"
-    },
-    "scripts": {
-        "clean": "recursive-delete \"dist\"",
-        "js": "rollup --config",
-        "css": "node sass.js",
-        "svg": "svgo -f src/svg dist/svg --disable=removeViewBox,removeTitle",
-        "img": "imagemin src/img/* --out-dir=dist/img --plugin=pngquant --plugin=mozjpeg --plugin=pngcrush --plugin=zopfli",
-        "copy": "recursive-copy \"src/copy\" \"dist\"",
-        "build-dirty": "npm-run-all -p js css svg img copy",
-        "build": "npm-run-all -s clean build-dirty",
-        "watch-css": "chokidar \"./src/**/*.scss\" -c \"yarn css\"",
-        "watch-js": "chokidar \"./src/**/*.js\" -c \"yarn js\"",
-        "watch-svg": "chokidar \"./src/**/*.svg\" -c \"yarn svg\"",
-        "watch-img": "chokidar \"./src/img/**/*.*\" -c \"yarn img\"",
-        "watch-copy": "chokidar \"./src/copy/**/*.*\" -c \"yarn copy\"",
-        "watch": "npm-run-all -p build watch-css watch-js watch-svg watch-img watch-copy",
-        "server-start": "browser-sync start --files \"dist\" --server \"dist\"",
-        "server": "npm-run-all -p watch server-start"
-    },
-    "devDependencies": {
-        "npm-run-all": "^4.1.5",
-        "recursive-fs": "^2.1.0",
-        "rollup": "^2.6.1",
-        "rollup-plugin-terser": "^7.0.2",
-        "sass": "^1.26.5",
-        "svgo": "^1.3.2",
-        "imagemin-cli": "^6.0.0",
-        "imagemin-mozjpeg": "^8.0.0",
-        "imagemin-pngcrush": "^6.0.0",
-        "imagemin-pngquant": "^8.0.0",
-        "imagemin-zopfli": "^6.0.0",
-        "chokidar-cli": "^2.1.0",
-        "browser-sync": "^2.26.14"
-    }
+  "name": "nomad-game",
+  "version": "0.0.1",
+  "description": "Simple text-based adventure game",
+  "author": {
+    "name": "Craig Baldwin",
+    "url": "https://craigbaldwin.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csbrightside/nomad-game"
+  },
+  "scripts": {
+    "clean": "recursive-delete \"dist\"",
+    "js": "rollup --config",
+    "css": "node sass.js",
+    "svg": "svgo -f src/svg dist/svg --disable=removeViewBox,removeTitle",
+    "img": "imagemin src/img/* --out-dir=dist/img --plugin=pngquant --plugin=mozjpeg --plugin=pngcrush --plugin=zopfli",
+    "copy": "recursive-copy \"src/copy\" \"dist\"",
+    "build-dirty": "npm-run-all -p js css svg img copy",
+    "build": "npm-run-all -s clean build-dirty",
+    "watch-css": "chokidar \"./src/**/*.scss\" -c \"yarn css\"",
+    "watch-js": "chokidar \"./src/**/*.js\" -c \"yarn js\"",
+    "watch-svg": "chokidar \"./src/**/*.svg\" -c \"yarn svg\"",
+    "watch-img": "chokidar \"./src/img/**/*.*\" -c \"yarn img\"",
+    "watch-copy": "chokidar \"./src/copy/**/*.*\" -c \"yarn copy\"",
+    "watch": "npm-run-all -p build watch-css watch-js watch-svg watch-img watch-copy",
+    "server-start": "browser-sync start --files \"dist\" --server \"dist\"",
+    "server": "npm-run-all -p watch server-start"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@we-make-websites/stylelint-config": "^1.0.3",
+    "babel-eslint": "^10.0.2",
+    "browser-sync": "^2.26.14",
+    "chokidar-cli": "^2.1.0",
+    "eslint-plugin-import": "^2.18.1",
+    "eslint-plugin-shopify": "28.0.0",
+    "eslint-plugin-vue": "^7.0.0-alpha.9",
+    "eslint": "^6.7.2",
+    "husky": "3.0.5",
+    "imagemin-cli": "^6.0.0",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngcrush": "^6.0.0",
+    "imagemin-pngquant": "^8.0.0",
+    "imagemin-zopfli": "^6.0.0",
+    "lint-staged": "10.0.0-0",
+    "npm-run-all": "^4.1.5",
+    "recursive-fs": "^2.1.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup": "^2.6.1",
+    "sass": "^1.26.5",
+    "stylelint": "^10.1.0",
+    "svgo": "^1.3.2"
+  },
+  "lint-staged": {
+    "*.scss": "stylelint",
+    "*.js": "eslint"
+  }
 }

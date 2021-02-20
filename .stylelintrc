@@ -1,0 +1,5 @@
+{
+  'extends': [
+    '@we-make-websites/stylelint-config'
+  ],
+}

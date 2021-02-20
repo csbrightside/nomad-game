@@ -4,4 +4,4 @@
  * All functionality loaded here.
  *
  */
-console.log('Hello there');
+window.console.log('Hello there');
